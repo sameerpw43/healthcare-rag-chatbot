@@ -3,14 +3,14 @@
     "outputDirectory": "frontend/dist",
     "framework": null,
     "functions": {
-        "api/**/*.js": {
+        "api/[...path].js": {
             "maxDuration": 60
         }
     },
     "rewrites": [
         {
-            "source": "/api/(.*)",
-            "destination": "/api/$1"
+            "source": "/api/:path*",
+            "destination": "/api/:path*"
         },
         {
             "source": "/(.*)",
