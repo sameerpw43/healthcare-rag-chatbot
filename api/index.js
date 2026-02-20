@@ -18,9 +18,8 @@ import {
 } from "../voiceAgent.js";
 
 export default async function handler(req, res) {
-    // Parse route from the URL path (remove /api/ prefix)
-    const url = new URL(req.url, `https://${req.headers.host}`);
-    const route = url.pathname.replace(/^\/api\/?/, "");
+    // Route is passed as query param by vercel.json rewrite
+    const route = (req.query?.route || "").replace(/^\//, "");
 
     try {
         // ============================================
