@@ -116,10 +116,15 @@ export function createAvaAgent() {
     const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
     return async function generateAvaResponse(conversationHistory, callScript) {
-        const mappedMessages = conversationHistory.map((msg) => ({
+        let mappedMessages = conversationHistory.map((msg) => ({
             role: msg.role === "ava" ? "assistant" : "user",
             content: msg.content,
         }));
+
+        // Anthropic requires at least one message
+        if (mappedMessages.length === 0) {
+            mappedMessages = [{ role: "user", content: "Hello?" }];
+        }
 
         const response = await anthropic.messages.create({
             model: ANTHROPIC_MODEL,
