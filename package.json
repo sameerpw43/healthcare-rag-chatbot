@@ -1,0 +1,26 @@
+{
+  "name": "healthcare-rag-chatbot",
+  "module": "rag.js",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "node server.js",
+    "build": "cd frontend && npm install && npm run build"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.78.0",
+    "@deepgram/sdk": "^4.11.3",
+    "@huggingface/inference": "^4.13.5",
+    "@langchain/community": "^1.1.3",
+    "@langchain/core": "^1.1.12",
+    "@langchain/pinecone": "^1.0.1",
+    "@langchain/textsplitters": "^1.0.1",
+    "@pinecone-database/pinecone": "^6.1.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "groq-sdk": "^0.37.0",
+    "ollama": "^0.6.3",
+    "pdf-parse": "^1.1.1"
+  }
+}

@@ -1,0 +1,32 @@
+Patient Name: Sarah Johnson
+Age: 58
+Scheduled Procedure: Cardiac Catheterization with Dr. Patel on May 24th
+
+MEDICAL HISTORY:
+- Type 2 Diabetes (not on insulin, takes oral medication)
+- History of high blood pressure
+- Had knee surgery 2 years ago
+
+CURRENT MEDICATIONS:
+- Metformin for diabetes
+- Lisinopril for blood pressure
+- Taking Eliquis (blood thinner) - started 3 months ago
+
+ALLERGIES:
+- Shellfish allergy (causes hives and swelling)
+
+CURRENT HEALTH STATUS:
+- Generally feeling well
+- No fever, cough, or respiratory symptoms
+- Occasional mild nausea but nothing serious
+- No rash
+- Not on dialysis
+- No renal transplant history
+- Not using any medication pump
+
+PERSONALITY TRAITS:
+- Somewhat anxious about medical procedures
+- Asks clarifying questions
+- Sometimes needs information repeated
+- Cooperative but cautious
+- Concerned about medication interactions
