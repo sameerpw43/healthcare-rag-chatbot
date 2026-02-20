@@ -3,21 +3,18 @@
     "outputDirectory": "frontend/dist",
     "framework": null,
     "functions": {
-        "api/[...path].js": {
+        "api/index.js": {
             "maxDuration": 60
         }
     },
-    "routes": [
+    "rewrites": [
         {
-            "src": "/api/(.*)",
-            "dest": "/api/[...path]"
+            "source": "/api/(.*)",
+            "destination": "/api"
         },
         {
-            "handle": "filesystem"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/index.html"
+            "source": "/((?!api).*)",
+            "destination": "/index.html"
         }
     ]
 }

@@ -16,12 +16,11 @@ import {
     getVoiceSimulationState,
     stopVoiceSimulation,
 } from "../voiceAgent.js";
-import { auditConversationAgainstScript, extractExpectedQuestionsFromCallScript } from "../scriptAudit.js";
 
 export default async function handler(req, res) {
-    // Extract the path segments from the catch-all route
-    const { path } = req.query;
-    const route = Array.isArray(path) ? path.join("/") : path || "";
+    // Parse route from the URL path (remove /api/ prefix)
+    const url = new URL(req.url, `https://${req.headers.host}`);
+    const route = url.pathname.replace(/^\/api\/?/, "");
 
     try {
         // ============================================
@@ -65,7 +64,6 @@ export default async function handler(req, res) {
 
         if (route === "voice/start-call" && req.method === "POST") {
             const { callScriptPath = "./call-script.txt" } = req.body || {};
-            console.log("Starting new voice conversation...");
             const result = await startVoiceConversation(callScriptPath);
             return res.json({
                 success: true,
@@ -139,7 +137,6 @@ export default async function handler(req, res) {
                 patientVoice = "aura-orion-en",
             } = req.body || {};
 
-            console.log(`Starting AI-to-AI voice simulation with patient mood: ${patientMood}...`);
             const result = await startVoiceSimulation(
                 callScriptPath, patientContextPath, patientMood, maxTurns, avaVoice, patientVoice
             );
